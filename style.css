@@ -127,3 +127,20 @@ body {
 #currentDate {
   display: inline;
 }
+
+#monthList,
+#yearList,
+.todayBtn {
+  padding: 3px;
+  vertical-align: text-bottom;
+  border-radius: 5px;
+  font-size: 1.25rem;
+}
+
+#monthList {
+  margin-left: 20px;
+}
+
+.todayBtn {
+  background-color: rgba(255, 255, 255, 0.5);
+}
