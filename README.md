@@ -1,7 +1,7 @@
 # JavaScript Calendar
 
 ## Description
-This is the beginnings of what will eventually become a dynamically generated Node.js event calendar. I currently have the front-end calendar functioning, and just need to make some minor changes before adding the back-end.
+This is the beginnings of what will eventually become a dynamically generated Node.js event calendar. The front-end is functioning, and the minimal back-end code has been added, but there's still a lot of functions that are not in place yet.
 
 ## Current Functionality
 * Next month and previous month buttons take you to the next month or previous month.
