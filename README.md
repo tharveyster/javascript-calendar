@@ -1,15 +1,23 @@
 # JavaScript Calendar
 
 ## Description
-This is the beginnings of what will eventually become a Node.js event calendar. I currently have the front-end calendar functioning, and just need to make some minor changes before adding the back-end.
+This is the beginnings of what will eventually become a dynamically generated Node.js event calendar. I currently have the front-end calendar functioning, and just need to make some minor changes before adding the back-end.
 
-The goal is to have a calendar that allows:
-* user registration
-* login/logout
-* add/modify/delete events
-* events can be visible to the public or private
-* ability to share private events with selected registered users
-* add/change background image for each month
+## Current Functionality
+* Next month and previous month buttons take you to the next month or previous month.
+* Month and year dropdown list takes you directly to the month and/or year of your choice.
+* "Today" button returns you to the current month.
+* Current date has a difference background color.
+* "Sign In" button takes you to the Sign In page.
+* Sign up link on the Sign In page takes you to the Sign Up Page.
+
+## Additional Functionality That's Still Pending
+* User registration
+* Login/logout
+* Add/modify/delete events
+* Events can be visible to the public or private
+* Ability to share private events with selected registered users
+* Add/change background image for each month
 
 ## License
 Copyright 2021 Todd Harvey
