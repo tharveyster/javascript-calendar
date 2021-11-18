@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="./public/css/style.css" />
+  </head>
+  <body>
+    <div class="signInContainer">
+      <div class="column">
+        <div class="header">
+          <h3>Sign Up</h3>
+          <span>to create a calendar account</span>
+        </div>
+        <div class="loginForm">
+          <form action="signUp.php" method="POST" name="signUp" id="signUp">
+            <input
+              class="form-control"
+              type="text"
+              name="firstName"
+              placeholder="First name"
+              value=""
+              required
+              autofocus
+            />
+            <input
+              class="form-control"
+              type="text"
+              name="lastName"
+              placeholder="Last name"
+              value=""
+              required
+            />
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              placeholder="Email address"
+              value="" 
+              required
+            />
+            <!-- Email error goes here -->
+            <input
+              class="form-control"
+              type="text"
+              name="username"
+              placeholder="Username"
+              value=""
+              autocomplete="off"
+              required
+            />
+            <!-- Username error goes here -->
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              placeholder="Password"
+              autocomplete="off"
+              required
+            />
+            <input
+              class="btn btn-primary"
+              type="submit"
+              name="submitButton"
+              value="SUBMIT"
+            />
+          </form>
+        </div>
+        <a class="signInMessage" href="signin.html">Already have an account? Sign in here!</a>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+    <script>
+      jQuery.validator.addMethod(
+        "lettersonly",
+        function (value, element) {
+          return this.optional(element) || /^[a-zA-Z]+$/i.test(value);
+        },
+        "Letters only please"
+      );
+      jQuery.validator.addMethod(
+        "alphanumeric",
+        function (value, element) {
+          return this.optional(element) || /^[a-zA-Z0-9_]+$/i.test(value);
+        },
+        "Letters, numbers, and underscores only please"
+      );
+      jQuery.validator.addMethod(
+        "alphanumchar",
+        function (value, element) {
+          return (
+            this.optional(element) || /^[a-zA-Z0-9.,?!@#$%^*~_]+$/i.test(value)
+          );
+        },
+        "Letters, numbers, and special characters only please"
+      );
+      $(function () {
+        $("#signUp").validate({
+          errorClass: "alert alert-danger",
+          validClass: "alert alert-success",
+          rules: {
+            firstName: {
+              required: true,
+              lettersonly: true,
+            },
+            lastName: {
+              required: true,
+              lettersonly: true,
+            },
+            email: {
+              required: true,
+            },
+            username: {
+              required: true,
+              minlength: 6,
+              alphanumeric: true,
+            },
+            password: {
+              required: true,
+              minlength: 8,
+              alphanumchar: true,
+            },
+          },
+          messages: {
+            firstName: {
+              required: "You must enter your first name",
+              lettersonly: "Please use letters only",
+            },
+            lastName: {
+              required: "You must enter your last name",
+              lettersonly: "Please use letters only",
+            },
+            email: {
+              required: "You must enter your email address",
+            },
+            username: {
+              required: "You must enter a username",
+              minlength: "Your username must be at least 6 characters",
+              alphanumeric: "Please use letters and numbers only",
+            },
+            password: {
+              required: "You must enter a password",
+              minlength: "Your password must be at least 8 characters",
+              alphanumchar:
+                "Please use letters, numbers, and special characters only (& ' \" < > not allowed)",
+            },
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
