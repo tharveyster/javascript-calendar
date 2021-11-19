@@ -11,10 +11,10 @@ This is the beginnings of what will eventually become a dynamically generated No
 * "Sign In" button takes you to the Sign In page.
 * Sign up link on the Sign In page takes you to the Sign Up Page.
 * New user registration.
+* Existing user sign in.
 * Sign out.
 
 ## Additional Functionality That's Still Pending
-* Sign in
 * Add/modify/delete events
 * Events can be visible to the public or private
 * Ability to share private events with selected registered users
