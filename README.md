@@ -18,6 +18,9 @@ This is the beginnings of what will eventually become a dynamically generated No
 * Add/modify/delete events
 * Events can be visible to the public or private
 * Ability to share private events with selected registered users
+* Change user first and last names
+* Change email address
+* Change password
 * Add/change background image for each month
 
 ## License
