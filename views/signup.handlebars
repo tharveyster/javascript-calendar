@@ -5,8 +5,9 @@
           <span>to create a calendar account</span>
         </div>
         <div class="loginForm">
-          <form action="signUp.php" method="POST" name="signUp" id="signUp">
+          <form name="signUp" id="signUp">
             <input
+              id="signUpFirstName"
               class="form-control"
               type="text"
               name="firstName"
@@ -16,6 +17,7 @@
               autofocus
             />
             <input
+              id="signUpLastName"
               class="form-control"
               type="text"
               name="lastName"
@@ -24,6 +26,7 @@
               required
             />
             <input
+              id="signUpEmail"
               class="form-control"
               type="email"
               name="email"
@@ -33,6 +36,7 @@
             />
             <!-- Email error goes here -->
             <input
+              id="signUpUsername"
               class="form-control"
               type="text"
               name="username"
@@ -43,6 +47,7 @@
             />
             <!-- Username error goes here -->
             <input
+              id="signUpPassword"
               class="form-control"
               type="password"
               name="password"
@@ -145,3 +150,4 @@
         });
       });
     </script>
+    <script src="./js/signup.js"></script>

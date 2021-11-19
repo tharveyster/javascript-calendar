@@ -10,10 +10,11 @@ This is the beginnings of what will eventually become a dynamically generated No
 * Current date has a difference background color.
 * "Sign In" button takes you to the Sign In page.
 * Sign up link on the Sign In page takes you to the Sign Up Page.
+* New user registration.
+* Sign out.
 
 ## Additional Functionality That's Still Pending
-* User registration
-* Login/logout
+* Sign in
 * Add/modify/delete events
 * Events can be visible to the public or private
 * Ability to share private events with selected registered users

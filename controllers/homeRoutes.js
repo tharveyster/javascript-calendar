@@ -3,7 +3,9 @@ const { User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res) => {
-  res.render('calendar');
+  res.render('calendar', {
+    logged_in: req.session.logged_in
+  });
 })
 
 router.get('/signin', (req, res) => {

@@ -3,7 +3,11 @@
         <div class="month">
           <span class="prev">&#10092;&#10092;&#10092;</span>
           <div class="loginMessage">
-            <a href="signin" class="loginMessageLink">SIGN IN</a>
+            {{#if logged_in}}
+            <a href="/signout" id="signOut" class="loginMessageLink">SIGN OUT</a>
+            {{else}}
+            <a href="/signin" class="loginMessageLink">SIGN IN</a>
+            {{/if}}
           </div>
           <div class="date">
             <h1></h1>
@@ -12,8 +16,10 @@
             <select id="yearList" onchange="getSelectedYear()"></select>
           </div>
           <div class="loginMessage">
+            {{#if logged_in}}
             <!-- Pending -->
             <a href="#" class="loginMessageLink">SETTINGS</a>
+            {{/if}}
           </div>
           <span class="next">&#10093;&#10093;&#10093;</span>
         </div>
