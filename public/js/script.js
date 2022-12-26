@@ -15,7 +15,7 @@ const months = [
   'December',
 ];
 
-const beginYear = 2019;
+const beginYear = 1944;
 const endYear = 2044;
 
 const renderCalendar = () => {
@@ -40,7 +40,7 @@ const renderCalendar = () => {
   let days = '';
 
   for (let x = firstDayIndex; x > 0; x--) {
-    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+    days += `<div class="day prev-date" id="${date.getFullYear()}-${date.getMonth()}-${prevLastDay - x + 1}">${prevLastDay - x + 1}</div>`;
   }
 
   for (let i = 1; i <= lastDay; i++) {
@@ -49,24 +49,42 @@ const renderCalendar = () => {
       date.getMonth() === new Date().getMonth() &&
       date.getFullYear() === new Date().getFullYear()
     ) {
-      days += `<div class="today">${i}</div>`;
+      days += `<div class="day today" id="${date.getFullYear()}-${date.getMonth()+1}-${i}">${i}</div>`;
     } else {
-      days += `<div>${i}</div>`;
+      days += `<div class="day" id="${date.getFullYear()}-${date.getMonth()+1}-${i}">${i}</div>`;
     }
   }
 
   for (let j = 1; j <= nextDays; j++) {
-    days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
+    days += `<div class="day next-date" id="${date.getFullYear()}-${date.getMonth()+1}-${j}">${j}</div>`;
   }
 
+  monthDays.innerHTML = days;
+
   if (lastDay + nextDays < 36) {
-    const expanded = document.querySelectorAll(".days div");
+    const expanded = document.querySelectorAll(".days .day");
     for (let e = 0; e < expanded.length; e++) {
       expanded[e].classList.add('expanded');
     }
   }
 
+  const dayEvents = document.querySelectorAll('.day');
+  for (let y = 0; y < dayEvents.length; y++) {
+    dayEvents[y].addEventListener('mouseover', function() {
+      let dayNumber = dayEvents[y].textContent;
+      let dateId = document.querySelectorAll('.day')[y].id;
+      console.log('Hovered over ' + dayNumber);
+      console.log('Hovered over ' + dateId);
+    })
+    dayEvents[y].addEventListener('click', function() {
+      let dayNumber = dayEvents[y].textContent;
+      let dayId = this.id;
+      console.log('Clicked on ' + dayNumber);
+      console.log('Clicked ID ' + dayId);
+      window.location.href = '/create-event/'+dayId;
+    })
+  }
+  
 };
 
 const selectMonthEl = document.querySelector('#monthList');
@@ -105,7 +123,6 @@ document.querySelector('.prev').addEventListener('click', () => {
   }
   newYear = date.getFullYear() - beginYear;
   selectYearEl.children[newYear].setAttribute('selected', 'selected');
-  console.log(newYear);
 });
 
 document.querySelector('.next').addEventListener('click', () => {
@@ -139,3 +156,4 @@ function getSelectedYear() {
 }
 
 renderCalendar();
+

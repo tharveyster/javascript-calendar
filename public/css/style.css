@@ -116,6 +116,10 @@ a {
   cursor: pointer;
 }
 
+.day {
+  position: relative;
+}
+
 .prev,
 .next {
   color: #ccc;
@@ -259,4 +263,20 @@ a {
 
 .btn {
   font-size: 1.6rem;
+}
+
+.eventPopup {
+  display: none !important;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border: none;
+  border-radius: 1rem;
+  min-width: 80%;
+  min-height: 60%;
+  background-color: #888;
+}
+
+.day:hover .eventPopup {
+  display: block !important;
 }
