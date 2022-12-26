@@ -13,9 +13,10 @@ This is the beginnings of what will eventually become a dynamically generated No
 * New user registration.
 * Existing user sign in.
 * Sign out.
+* Add events to specific days.
 
 ## Additional Functionality That's Still Pending
-* Add/modify/delete events
+* View/modify/delete events
 * Events can be visible to the public or private
 * Ability to share private events with selected registered users
 * Change user first and last names
